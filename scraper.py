@@ -62,8 +62,8 @@ for product in product_elements:
             original_price = "N/A"
 
         try:
-            shipping_element = product.find_element(By.CSS_SELECTOR, "span.SLV8J")
-            shipping = shipping_element.text.strip() if shipping_element else "N/A"
+            shipping_element = product.find_element(By.XPATH, ".//span[contains(text(), 'shipping') or contains(text(), 'Shipping')]")
+            shipping = shipping_element.text.strip()
         except:
             shipping = "N/A"
         try:
